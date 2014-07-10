@@ -1,3 +1,7 @@
+
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -20,38 +24,117 @@ public  class Radio implements RadioInterface {
         
     
     @Override
-    public void cambiarFrecuencia(boolean frecuencia) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void cambiarFrecuencia(boolean frecuencia){
+        try {
+            setBandaAM(frecuencia);
+            if (isBandaAM())
+                setValorFrecuencia(530);
+            else 
+                setValorFrecuencia(87.9);
+                        
+                
+        } catch (Exception ex) {
+            Logger.getLogger(Radio.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     @Override
     public double sacar(int boton) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        try {
+            if (isBandaAM())
+                return favoritosAM[boton];
+            else
+                return favoritosFM[boton];
+        } catch (Exception ex) {
+            Logger.getLogger(Radio.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return -1;
     }
 
     @Override
     public void apagar() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        setOn(false);
     }
 
     @Override
     public void encender() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        try {
+            setOn(true);
+            setBandaAM(true);
+            setValorFrecuencia(530);
+        } catch (Exception ex) {
+            Logger.getLogger(Radio.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     @Override
     public void guardar(int boton, double estacion) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        try {
+            if (isBandaAM())
+                setBotonFavoritoAM(valorFrecuencia, boton);
+            else
+                setBotonFavoritoFM(valorFrecuencia, boton);
+        } catch (Exception ex) {
+            Logger.getLogger(Radio.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     @Override
     public double subirEstacion() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        try {
+            if(isBandaAM()){
+                double estacionAM = getEstacionAM();
+                if(estacionAM<1610){
+                    estacionAM = estacionAM+10;
+                    setValorFrecuencia(estacionAM);
+                }
+                else
+                    setValorFrecuencia(530);
+            }
+            else{
+                double estacionFM = getEstacionFM();
+                if(estacionFM<107.9){
+                    estacionFM = estacionFM+0.2;
+                    setValorFrecuencia(estacionFM);
+                }
+                else
+                    setValorFrecuencia(87.9);
+                
+            }
+        } catch (Exception ex) {
+            Logger.getLogger(Radio.class.getName()).log(Level.SEVERE, null, ex);
+        }
+            
+                    
     }
 
     @Override
     public double bajarEstacion() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        try {
+            if(isBandaAM()){
+                double estacionAM = getEstacionAM();
+                if(estacionAM>530){
+                    estacionAM = estacionAM-10;
+                    setValorFrecuencia(estacionAM);
+                }
+                else
+                    setValorFrecuencia(1610);
+            }
+            else{
+                double estacionFM = getEstacionFM();
+                if(estacionFM>87.9){
+                    estacionFM = estacionFM-0.2;
+                    setValorFrecuencia(estacionFM);
+                }
+                else
+                    setValorFrecuencia(107.9);
+                
+            }
+        } catch (Exception ex) {
+            Logger.getLogger(Radio.class.getName()).log(Level.SEVERE, null, ex);
+        }
+            
+                    
     }
 
     @Override
@@ -133,5 +216,23 @@ public  class Radio implements RadioInterface {
             throw new Exception("Radio apagada");
     }
     
+    /**
+     * @param valorFrecuencia the valorFrecuencia to set
+     * @throws java.lang.Exception
+     */
+    public void setBotonFavoritoAM(double valorFrecuencia, int boton) throws Exception {
+        if (isOn())
+        this.favoritosAM[boton] = valorFrecuencia;
+        else 
+            throw new Exception("Radio apagada");
+    }
+    
+    public void setBotonFavoritoFM(double valorFrecuencia, int boton) throws Exception {
+        if (isOn())
+        this.favoritosFM[boton] = valorFrecuencia;
+        else 
+            throw new Exception("Radio apagada");
+    }
+   
     
 }
