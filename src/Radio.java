@@ -201,6 +201,7 @@ public  class Radio implements RadioInterface {
     public boolean isBandaAM() throws Exception {
         if (isOn())
         return bandaAM;
+        //return !bandaAM;
         else 
             throw new Exception("Radio apagada");
     }
@@ -212,6 +213,7 @@ public  class Radio implements RadioInterface {
     public void setBandaAM(boolean bandaAM) throws Exception {
         if (isOn())
         this.bandaAM = bandaAM;
+        //this.bandaAM = !bandaAM;
         else 
             throw new Exception("Radio apagada");
     }
