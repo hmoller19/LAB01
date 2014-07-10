@@ -101,11 +101,12 @@ public  class Radio implements RadioInterface {
                     setValorFrecuencia(87.9);
                 
             }
+            
+                    return getValorFrecuencia();
         } catch (Exception ex) {
             Logger.getLogger(Radio.class.getName()).log(Level.SEVERE, null, ex);
         }
-            
-                    
+        return -1;
     }
 
     @Override
@@ -130,31 +131,53 @@ public  class Radio implements RadioInterface {
                     setValorFrecuencia(107.9);
                 
             }
+            
+            return getValorFrecuencia();
         } catch (Exception ex) {
             Logger.getLogger(Radio.class.getName()).log(Level.SEVERE, null, ex);
         }
+        return -1;
             
                     
     }
 
     @Override
     public boolean getFrecuencia() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        try {
+            return isBandaAM();
+        } catch (Exception ex) {
+            Logger.getLogger(Radio.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return false;
     }
 
     @Override
     public boolean getEncendido() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return isOn();
     }
 
     @Override
     public double getEstacionAM() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        try {
+            if(isBandaAM())
+                return getValorFrecuencia();
+                
+        } catch (Exception ex) {
+            Logger.getLogger(Radio.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return -1;
     }
 
     @Override
     public double getEstacionFM() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        try {
+            if(!isBandaAM())
+                return getValorFrecuencia();
+                
+        } catch (Exception ex) {
+            Logger.getLogger(Radio.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return -1;
     }
 
     /**
