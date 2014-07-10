@@ -14,6 +14,9 @@ public  class Radio implements RadioInterface {
     
     private boolean on;
     private boolean bandaAM; 
+    private double valorFrecuencia; 
+    private double[] favoritosAM = new double[12];
+    private double[] favoritosFM = new double[12];    
         
     
     @Override
@@ -87,16 +90,47 @@ public  class Radio implements RadioInterface {
 
     /**
      * @return the bandaAM
+     * @throws java.lang.Exception
      */
-    public boolean isBandaAM() {
+    public boolean isBandaAM() throws Exception {
+        if (isOn())
         return bandaAM;
+        else 
+            throw new Exception("Radio apagada");
     }
 
     /**
      * @param bandaAM the bandaAM to set
+     * @throws java.lang.Exception
      */
-    public void setBandaAM(boolean bandaAM) {
+    public void setBandaAM(boolean bandaAM) throws Exception {
+        if (isOn())
         this.bandaAM = bandaAM;
+        else 
+            throw new Exception("Radio apagada");
+    }
+
+    /**
+     * @return the valorFrecuencia
+     * @throws java.lang.Exception
+     */
+    public double getValorFrecuencia() throws Exception {
+        if (isOn())
+        return valorFrecuencia;
+        else 
+            throw new Exception("Radio apagada");
+        
+    }
+
+    /**
+     * @param valorFrecuencia the valorFrecuencia to set
+     * @throws java.lang.Exception
+     */
+    public void setValorFrecuencia(double valorFrecuencia) throws Exception {
+        if (isOn())
+        this.valorFrecuencia = valorFrecuencia;
+        else 
+            throw new Exception("Radio apagada");
     }
     
     
