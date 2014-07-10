@@ -224,12 +224,13 @@ public class RadioGUI extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jToggleButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton2ActionPerformed
-        // TODO add your handling code here:
+        // Botón de AM/FM
+   
         if (jToggleButton1.isSelected())
             if(jToggleButton2.isSelected())
-                myRadio.cambiarFrecuencia(true);
-            else 
                 myRadio.cambiarFrecuencia(false);
+            else 
+                myRadio.cambiarFrecuencia(true);
         refreshGui();
             
     }//GEN-LAST:event_jToggleButton2ActionPerformed
@@ -250,6 +251,7 @@ public class RadioGUI extends javax.swing.JFrame {
         }
         else {
             jLabel1.setText("-");
+            jLabel2.setText("-");
         }
     }
     /**
