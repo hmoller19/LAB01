@@ -21,9 +21,9 @@ public  class Radio implements RadioInterface {
     private double valorFrecuencia; 
     private double[] favoritosAM = new double[12];
     private double[] favoritosFM = new double[12];   
-   
+    //Vector favoritosAM = new Vector(12);
+    //Vector favoritosFM = new Vector(12);
         
-    
     @Override
     public void cambiarFrecuencia(boolean frecuencia){
         try {
