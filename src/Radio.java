@@ -19,11 +19,11 @@ public  class Radio implements RadioInterface {
     private boolean on;
     private boolean bandaAM; 
     private double valorFrecuencia; 
-    private double[] favoritosAM = new double[12];
-    private double[] favoritosFM = new double[12];   
-    //Vector favoritosAM = new Vector(12);
-    //Vector favoritosFM = new Vector(12);
-        
+    private double[] favoritosAM = new double[13]; // Se usaron 13 espacios por conveniencia.
+    private double[] favoritosFM = new double[13]; // Los botones se empiezan a guardar desde 1 
+                                                   // Recordar que el array empieza a contar espacios
+                                                   //en 0.
+       
     @Override
     public void cambiarFrecuencia(boolean frecuencia){
         try {

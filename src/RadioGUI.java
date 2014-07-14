@@ -86,24 +86,74 @@ public class RadioGUI extends javax.swing.JFrame {
         });
 
         jButton4.setText("FAV2");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
 
         jButton5.setText("FAV3");
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
 
         jButton6.setText("FAV4");
+        jButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton6ActionPerformed(evt);
+            }
+        });
 
         jButton7.setText("FAV5");
+        jButton7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton7ActionPerformed(evt);
+            }
+        });
 
         jButton8.setText("FAV6");
+        jButton8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton8ActionPerformed(evt);
+            }
+        });
 
         jButton9.setText("FAV7");
+        jButton9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton9ActionPerformed(evt);
+            }
+        });
 
         jButton10.setText("FAV8");
+        jButton10.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton10ActionPerformed(evt);
+            }
+        });
 
         jButton11.setText("FAV9");
+        jButton11.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton11ActionPerformed(evt);
+            }
+        });
 
         jButton12.setText("FAV10");
+        jButton12.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton12ActionPerformed(evt);
+            }
+        });
 
         jButton13.setText("FAV11");
+        jButton13.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton13ActionPerformed(evt);
+            }
+        });
 
         jButton14.setText("FAV12");
         jButton14.addActionListener(new java.awt.event.ActionListener() {
@@ -222,7 +272,7 @@ public class RadioGUI extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
  
-    private boolean banderaRS = false;
+    private boolean banderaRS = true;
     
     private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton1ActionPerformed
         //Botón ON/OFF
@@ -235,7 +285,22 @@ public class RadioGUI extends javax.swing.JFrame {
     }//GEN-LAST:event_jToggleButton1ActionPerformed
 
     private void jButton14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton14ActionPerformed
-        // TODO add your handling code here:
+        // Botón FAV12
+         if (jToggleButton1.isSelected()){
+             if(banderaRS==false){
+                 if(myRadio.getFrecuencia()==true){
+                     myRadio.guardar(12,myRadio.getEstacionAM());
+                 }
+                 else
+                     myRadio.guardar(12, myRadio.getEstacionFM());
+                 refreshGui();
+             }
+             else {
+                 double freqGuardada = myRadio.sacar(12);
+                 jLabel1.setText(freqGuardada+"");
+             }
+         }
+             
     }//GEN-LAST:event_jButton14ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
@@ -303,6 +368,196 @@ public class RadioGUI extends javax.swing.JFrame {
              
          
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        // Botón FAV2
+         if (jToggleButton1.isSelected()){
+             if(banderaRS==false){
+                 if(myRadio.getFrecuencia()==true){
+                     myRadio.guardar(2,myRadio.getEstacionAM());
+                 }
+                 else
+                     myRadio.guardar(2, myRadio.getEstacionFM());
+                 refreshGui();
+             }
+             else {
+                 double freqGuardada = myRadio.sacar(2);
+                 jLabel1.setText(freqGuardada+"");
+             }
+         }
+             
+    }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        // Botón FAV3
+         if (jToggleButton1.isSelected()){
+             if(banderaRS==false){
+                 if(myRadio.getFrecuencia()==true){
+                     myRadio.guardar(3,myRadio.getEstacionAM());
+                 }
+                 else
+                     myRadio.guardar(3, myRadio.getEstacionFM());
+                 refreshGui();
+             }
+             else {
+                 double freqGuardada = myRadio.sacar(3);
+                 jLabel1.setText(freqGuardada+"");
+             }
+         }
+             
+    }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+       // Botón FAV6
+         if (jToggleButton1.isSelected()){
+             if(banderaRS==false){
+                 if(myRadio.getFrecuencia()==true){
+                     myRadio.guardar(6,myRadio.getEstacionAM());
+                 }
+                 else
+                     myRadio.guardar(6, myRadio.getEstacionFM());
+                 refreshGui();
+             }
+             else {
+                 double freqGuardada = myRadio.sacar(6);
+                 jLabel1.setText(freqGuardada+"");
+             }
+         }
+             
+    }//GEN-LAST:event_jButton6ActionPerformed
+
+    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+       // Botón FAV5
+         if (jToggleButton1.isSelected()){
+             if(banderaRS==false){
+                 if(myRadio.getFrecuencia()==true){
+                     myRadio.guardar(5,myRadio.getEstacionAM());
+                 }
+                 else
+                     myRadio.guardar(5, myRadio.getEstacionFM());
+                 refreshGui();
+             }
+             else {
+                 double freqGuardada = myRadio.sacar(5);
+                 jLabel1.setText(freqGuardada+"");
+             }
+         }
+             
+    }//GEN-LAST:event_jButton7ActionPerformed
+
+    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
+        // Botón FAV6
+         if (jToggleButton1.isSelected()){
+             if(banderaRS==false){
+                 if(myRadio.getFrecuencia()==true){
+                     myRadio.guardar(6,myRadio.getEstacionAM());
+                 }
+                 else
+                     myRadio.guardar(6, myRadio.getEstacionFM());
+                 refreshGui();
+             }
+             else {
+                 double freqGuardada = myRadio.sacar(6);
+                 jLabel1.setText(freqGuardada+"");
+             }
+         }
+             
+    }//GEN-LAST:event_jButton8ActionPerformed
+
+    private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
+        // Botón FAV7
+         if (jToggleButton1.isSelected()){
+             if(banderaRS==false){
+                 if(myRadio.getFrecuencia()==true){
+                     myRadio.guardar(7,myRadio.getEstacionAM());
+                 }
+                 else
+                     myRadio.guardar(7, myRadio.getEstacionFM());
+                 refreshGui();
+             }
+             else {
+                 double freqGuardada = myRadio.sacar(7);
+                 jLabel1.setText(freqGuardada+"");
+             }
+         }
+             
+    }//GEN-LAST:event_jButton9ActionPerformed
+
+    private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
+        // Botón FAV8
+         if (jToggleButton1.isSelected()){
+             if(banderaRS==false){
+                 if(myRadio.getFrecuencia()==true){
+                     myRadio.guardar(8,myRadio.getEstacionAM());
+                 }
+                 else
+                     myRadio.guardar(8, myRadio.getEstacionFM());
+                 refreshGui();
+             }
+             else {
+                 double freqGuardada = myRadio.sacar(8);
+                 jLabel1.setText(freqGuardada+"");
+             }
+         }
+             
+    }//GEN-LAST:event_jButton10ActionPerformed
+
+    private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
+        // Botón FAV9
+         if (jToggleButton1.isSelected()){
+             if(banderaRS==false){
+                 if(myRadio.getFrecuencia()==true){
+                     myRadio.guardar(9,myRadio.getEstacionAM());
+                 }
+                 else
+                     myRadio.guardar(9, myRadio.getEstacionFM());
+                 refreshGui();
+             }
+             else {
+                 double freqGuardada = myRadio.sacar(9);
+                 jLabel1.setText(freqGuardada+"");
+             }
+         }
+             
+    }//GEN-LAST:event_jButton11ActionPerformed
+
+    private void jButton12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton12ActionPerformed
+        // Botón FAV10
+         if (jToggleButton1.isSelected()){
+             if(banderaRS==false){
+                 if(myRadio.getFrecuencia()==true){
+                     myRadio.guardar(10,myRadio.getEstacionAM());
+                 }
+                 else
+                     myRadio.guardar(10, myRadio.getEstacionFM());
+                 refreshGui();
+             }
+             else {
+                 double freqGuardada = myRadio.sacar(10);
+                 jLabel1.setText(freqGuardada+"");
+             }
+         }
+             
+    }//GEN-LAST:event_jButton12ActionPerformed
+
+    private void jButton13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton13ActionPerformed
+        // Botón FAV11
+         if (jToggleButton1.isSelected()){
+             if(banderaRS==false){
+                 if(myRadio.getFrecuencia()==true){
+                     myRadio.guardar(11,myRadio.getEstacionAM());
+                 }
+                 else
+                     myRadio.guardar(11, myRadio.getEstacionFM());
+                 refreshGui();
+             }
+             else {
+                 double freqGuardada = myRadio.sacar(11);
+                 jLabel1.setText(freqGuardada+"");
+             }
+         }
+             
+    }//GEN-LAST:event_jButton13ActionPerformed
 
     private void refreshGui()
     {
