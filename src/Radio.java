@@ -1,4 +1,4 @@
-
+import java.util.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -20,7 +20,8 @@ public  class Radio implements RadioInterface {
     private boolean bandaAM; 
     private double valorFrecuencia; 
     private double[] favoritosAM = new double[12];
-    private double[] favoritosFM = new double[12];    
+    private double[] favoritosFM = new double[12];   
+   
         
     
     @Override
@@ -68,7 +69,7 @@ public  class Radio implements RadioInterface {
     }
 
     @Override
-    public void guardar(int boton, double estacion) {
+    public void guardar(int boton, double valorFrecuencia) {
         try {
             if (isBandaAM())
                 setBotonFavoritoAM(valorFrecuencia, boton);

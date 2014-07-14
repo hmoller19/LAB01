@@ -1,3 +1,6 @@
+
+import javafx.scene.control.ToggleButton;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -76,6 +79,11 @@ public class RadioGUI extends javax.swing.JFrame {
         jLabel2.setText("-");
 
         jButton1.setText("FAV1");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jButton4.setText("FAV2");
 
@@ -213,7 +221,9 @@ public class RadioGUI extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+ 
+    private boolean banderaRS = false;
+    
     private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton1ActionPerformed
         //Botón ON/OFF
         if (jToggleButton1.isSelected())             
@@ -260,16 +270,36 @@ public class RadioGUI extends javax.swing.JFrame {
 
     private void jToggleButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton3ActionPerformed
         // Botón de Save/Retrieve
-        if (jToggleButton1.isSelected())
-            if(jToggleButton3.isSelected())
+        if (jToggleButton1.isSelected()){
+            if(jToggleButton3.isSelected()){
                 jLabel3.setText("S");
-            else
+                setBanderaRS(true);                
+            }
+            
+            else {
                 jLabel3.setText("R");
-            
-            
-           
+                setBanderaRS(false);
+            }
+        }
         
     }//GEN-LAST:event_jToggleButton3ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // Botón FAV1
+         if (jToggleButton1.isSelected()){
+             if(banderaRS==false){
+                 if(myRadio.getFrecuencia()==true){
+                     myRadio.guardar(1,myRadio.getEstacionAM());
+                 }
+                 else
+                     myRadio.guardar(1, myRadio.getEstacionFM());
+             }
+             else
+                 myRadio.sacar(1);
+         }
+         refreshGui();    
+         
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     private void refreshGui()
     {
@@ -350,4 +380,18 @@ public class RadioGUI extends javax.swing.JFrame {
     private javax.swing.JToggleButton jToggleButton2;
     private javax.swing.JToggleButton jToggleButton3;
     // End of variables declaration//GEN-END:variables
+
+    /**
+     * @return the banderaRS
+     */
+    public boolean isBanderaRS() {
+        return banderaRS;
+    }
+
+    /**
+     * @param banderaRS the banderaRS to set
+     */
+    public void setBanderaRS(boolean banderaRS) {
+        this.banderaRS = banderaRS;
+    }
 }
