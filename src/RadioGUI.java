@@ -273,12 +273,12 @@ public class RadioGUI extends javax.swing.JFrame {
         if (jToggleButton1.isSelected()){
             if(jToggleButton3.isSelected()){
                 jLabel3.setText("S");
-                setBanderaRS(true);                
+                setBanderaRS(false);                
             }
             
             else {
                 jLabel3.setText("R");
-                setBanderaRS(false);
+                setBanderaRS(true);
             }
         }
         
@@ -293,18 +293,21 @@ public class RadioGUI extends javax.swing.JFrame {
                  }
                  else
                      myRadio.guardar(1, myRadio.getEstacionFM());
+                 refreshGui();
              }
-             else
-                 myRadio.sacar(1);
+             else {
+                 double freqGuardada = myRadio.sacar(1);
+                 jLabel1.setText(freqGuardada+"");
+             }
          }
-         refreshGui();    
+             
          
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void refreshGui()
     {
         if (myRadio.getEncendido()){
-            jLabel3.setText("R");
+//            jLabel3.setText("R");
             if (myRadio.getFrecuencia())
             {
                 jLabel1.setText(String.valueOf(myRadio.getEstacionAM()));
