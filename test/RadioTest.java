@@ -108,12 +108,12 @@ public class RadioTest {
     @Test
     public void testSubirEstacion() {
         System.out.println("subirEstacion");
-        Radio instance = new Radio();
-        double expResult = 0.0;
+        Radio instance = new Radio(true,true,530);
+        double expResult = 540;
         double result = instance.subirEstacion();
         assertEquals(expResult, result, 0.0);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        //fail("The test case is a prototype.");
     }
 
     /**

@@ -19,10 +19,18 @@ public  class Radio implements RadioInterface {
     private boolean on;
     private boolean bandaAM; 
     private double valorFrecuencia; 
-    private double[] favoritosAM = new double[13]; // Se usaron 13 espacios por conveniencia.
+    private double[] favoritosAM = new double[13]; // En el array se usó 13 espacios por conveniencia.
     private double[] favoritosFM = new double[13]; // Los botones se empiezan a guardar desde 1 
-                                                   // Recordar que el array empieza a contar espacios
                                                    //en 0.
+    public Radio(){
+        
+    }
+    // Recordar que el array empieza a contar espacios
+    public Radio(boolean on, boolean bandaAM, double valorFrecuencia) {
+        this.on = on;
+        this.bandaAM = bandaAM;
+        this.valorFrecuencia = valorFrecuencia;
+    }
        
     @Override
     public void cambiarFrecuencia(boolean frecuencia){
