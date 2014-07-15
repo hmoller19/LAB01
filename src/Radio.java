@@ -21,11 +21,12 @@ public  class Radio implements RadioInterface {
     private double valorFrecuencia; 
     private double[] favoritosAM = new double[13]; // En el array se usó 13 espacios por conveniencia.
     private double[] favoritosFM = new double[13]; // Los botones se empiezan a guardar desde 1 
-                                                   //en 0.
+                                                   // Recordar que el array empieza a contar espacios
+                                                   // en 0.
     public Radio(){
         
     }
-    // Recordar que el array empieza a contar espacios
+    
     public Radio(boolean on, boolean bandaAM, double valorFrecuencia) {
         this.on = on;
         this.bandaAM = bandaAM;
