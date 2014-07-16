@@ -1,13 +1,13 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * Grupo: Héctor Möller, 09002
+ *        Ángel Basegoda 13256
+ *        Esteban Barrera 13413
+ * Sección 30
+ * Fecha de entrega 15/07/2014
+ * Nombre del archivo: RadioGUI.Java
+ * Función: Interfaz de la Radio. Propuesta en Blackboard.
  */
 
-/**
- *
- * @author Héctor
- */
 public interface RadioInterface {
     public void cambiarFrecuencia(boolean frecuencia); //Cambiar a fm o am
     public double sacar(int boton); //Obtener la estacion de un boton favorito
