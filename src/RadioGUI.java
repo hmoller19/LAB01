@@ -272,7 +272,7 @@ public class RadioGUI extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
  
-    private boolean banderaRS = true;
+    private boolean banderaRS = true;//True es read.
     
     private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton1ActionPerformed
         //Botón ON/OFF
